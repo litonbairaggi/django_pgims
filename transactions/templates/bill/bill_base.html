@@ -31,13 +31,13 @@
         <nav id="sidebar">
             
             <div class="sidebar-header">
-                <a class="navbar-brand titlefont mr-4" href="{% url 'home' %}"><h3>IMS-Django</h3></a>
+                <a class="navbar-brand" href="{% url 'home' %}"><h3>Pinaki Group </h3></a>
             </div>
 
             <ul class="list-unstyled sidebar-components">
                 {# <p class="sidebar-paragraph">Dummy Heading</p> #}
                 <li>
-                    <a class="sidebar-text sidebar-button" href="{% url 'home' %}"><i class="fas fa-home"></i> Home</a>
+                    <a class="sidebar-text sidebar-button" href="{% url 'home' %}"> Dashboard</a>
                 </li>               
                 <li><!-- Log on to codeastro.com for more projects -->
                     <a href="#inventorySubmenu" data-toggle="collapse" class="dropdown-toggle sidebar-text right-arrow sidebar-button"><i class="fas fa-boxes"></i> Inventory</a>
@@ -66,8 +66,7 @@
                         <li> <a class="sidebar-text sidebar-subitem sidebar-button" href="{% url 'suppliers-list' %}"><i class="fas fa-dot-circle"></i> Suppliers List</a> </li>
                         <li> <a class="sidebar-text sidebar-subitem sidebar-button" href="{% url 'new-supplier' %}"><i class="fas fa-dot-circle"></i> Add New Supplier</a> </li>
                     </ul>
-                </li>
-                <li>
+                </li>                <li>
                     <a class="sidebar-text sidebar-button" href="{% url 'about' %}"><i class="fas fa-info-circle"></i> About</a>
                 </li>
 

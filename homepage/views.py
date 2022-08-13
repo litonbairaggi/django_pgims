@@ -8,7 +8,8 @@ class HomeView(View):
     template_name = "home.html"
     def get(self, request):        
         labels = []
-        data = []        
+        data = []    
+        bills = SaleBill.objects.all().order_by('-time')    
         stockqueryset = Stock.objects.filter(is_deleted=False).order_by('-quantity')
         for item in stockqueryset:
             labels.append(item.name)
@@ -17,10 +18,11 @@ class HomeView(View):
 
             
         context = {
-            'labels'    : labels,
-            'data'      : data,
+            'labels': labels,
+            'data': data,
+            'bills': bills
         }
         return render(request, self.template_name, context)
 
 class AboutView(TemplateView):
-    template_name = "home.html"
+    template_name = "about.html"
