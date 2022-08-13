@@ -6,10 +6,11 @@ from transactions.models import SaleBill, PurchaseBill
 
 class HomeView(View):
     template_name = "home.html"
+    paginate_by = 5
     def get(self, request):        
         labels = []
         data = []    
-        bills = SaleBill.objects.all().order_by('-time')    
+        bills = SaleBill.objects.all().order_by('-time')  
         stockqueryset = Stock.objects.filter(is_deleted=False).order_by('-quantity')
         for item in stockqueryset:
             labels.append(item.name)
